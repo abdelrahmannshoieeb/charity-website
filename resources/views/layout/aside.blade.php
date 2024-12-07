@@ -29,7 +29,7 @@
                         </a>
                     </li><!--end nav-item-->
                     <li class="nav-item">
-                        <a class="nav-link" href="payment.html">
+                        <a class="nav-link" href="{{ route('recommended') }}">
                             <i class="fab fa-houzz menu-icon"></i>
                             <span>Instututions</span>
                         </a>

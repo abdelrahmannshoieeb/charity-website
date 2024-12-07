@@ -169,9 +169,12 @@
                             <input class="form-control" type="text" wire:model="jobb" placeholder="jobs" />
                             <a class="btn btn-primary" wire:click="addJob">Add</a>
                         </div>
+                        @if($jobs)
                         @foreach ($jobs as $jobItem)
-                        <li>{{ $jobItem }}</li>
+                        <h4 style="position: relative; left: 220px" class="m-1">{{ $jobItem }} </h4> 
                         @endforeach
+                        @endif
+
                     </div>
                     <div class="form-group mb-3 row">
                         <label class="col-xl-3 col-lg-3 text-end mb-lg-0 align-self-center form-label">skills</label>
@@ -179,10 +182,15 @@
                             <input class="form-control" type="text" wire:model="skilll" placeholder="skills" />
                             <a class="btn btn-primary" wire:click="addSkill">Add</a>
                         </div>
+                        @if($skills)
+                        @foreach ($skills as $skill)
+                        <h4 style="position: relative; left: 220px" class="m-1">{{ $skill }} </h4> 
+                        @endforeach
+                        @endif
                     </div>
                     <div class="form-group row">
                         <div class="col-lg-9 col-xl-8 offset-lg-3">
-                            <button type="submit" class="btn btn-primary">Change data</button>
+                            <a class="btn btn-primary" wire:click="addJobAndSkillsTO">Change data</a>
                             <button type="button" class="btn btn-danger">Cancel</button>
                         </div>
                     </div>

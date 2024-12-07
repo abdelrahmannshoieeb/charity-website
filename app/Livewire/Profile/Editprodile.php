@@ -41,13 +41,31 @@ class Editprodile extends Component
         $this->jobb = '';
     }
 
+    public function addJobAndSkillsTO()
+    {
+        $this->user->update([
+            'jobs' => $this->jobs,
+            'skills' => $this->skills,
+        ]);
+        $this->jobs[] = '';
+        $this->skills[] = '';
+    }
+    public function removeJob($jobItem)
+    {
+       dd($jobItem);
+        $index = array_search($jobItem, $this->jobs, true); // Use strict comparison
+            unset($this->jobs[$index]);
+            $this->jobs = array_values($this->jobs); // Reindex the array
+    }
+    
+
     public function addSkill()
     {
         $this->validate([
-            'skill' => 'required',
+            'skilll' => 'required',
         ]);
 
-        $this->skills[] = $this->skill;
+        $this->skills[] = $this->skilll;
         $this->skilll = ''; 
     }
 
@@ -56,6 +74,8 @@ class Editprodile extends Component
     {
         $this->cities = City::all();
         $this->user = auth()->user();
+        $this->jobs = $this->user->jobs;
+        $this->skills = $this->user->skills;
     }
 
     public function updatePersonal()

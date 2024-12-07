@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\User\IndexController;
+use App\Http\Controllers\USer\InstController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -31,6 +32,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::view ('/createInstu', 'admin.instu.createInstu')->name('createInstu');
     Route::view ('/editpProfile', 'editProfile')->name('editProfile');
     Route::view ('/profile', 'profile')->name('profile');
+    Route::get ('/recommended',[App\Http\Controllers\USer\InstController::class, 'instu'])->name('recommended');
 });
 
 

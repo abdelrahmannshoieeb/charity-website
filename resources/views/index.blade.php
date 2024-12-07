@@ -19,8 +19,8 @@
         <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
       </div>
     </div><!--end card-body-->
-  </div><!--end card-->
-</div> <!--end col-->
+  </div>
+</div> 
 @endif
 
 
